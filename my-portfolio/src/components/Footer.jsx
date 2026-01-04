@@ -1,8 +1,20 @@
 import "./Footer.css";
 
-function Footer({ motto = "", lang = "en", onLangChange, labels = {}, linkPrefix = "" }) {
+function Footer({
+  motto = "",
+  lang = "en",
+  onLangChange,
+  labels = {},
+  linkPrefix = "",
+  theme = "light",
+  onThemeChange,
+}) {
   const selectLang = (code) => {
     onLangChange?.(code);
+  };
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    onThemeChange?.(next);
   };
 
   const {
@@ -15,7 +27,11 @@ function Footer({ motto = "", lang = "en", onLangChange, labels = {}, linkPrefix
     resume = "resume",
     work = "work",
     about = "about",
+    theme: themeLabel = "theme",
+    themeToggleDark = "dark mode",
+    themeToggleLight = "light mode",
   } = labels;
+  const themeActionLabel = theme === "dark" ? themeToggleLight : themeToggleDark;
 
   const buildInternalHref = (path) => {
     if (!path || path === "/") return linkPrefix || "/";
@@ -57,6 +73,12 @@ function Footer({ motto = "", lang = "en", onLangChange, labels = {}, linkPrefix
               fr
             </button>
           </div>
+        </div>
+        <div className="footer-group">
+          <span className="footer-label">{themeLabel}</span>
+          <button type="button" className="footer-theme" onClick={toggleTheme}>
+            {themeActionLabel}
+          </button>
         </div>
         <div className="footer-motto">{motto}</div>
       </div>

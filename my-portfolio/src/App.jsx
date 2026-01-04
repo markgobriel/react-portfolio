@@ -14,6 +14,14 @@ const detectLangFromPath = () => {
   return window.location.pathname.startsWith("/fr") ? "fr" : "en";
 };
 
+const detectTheme = () => {
+  if (typeof window === "undefined") return "light";
+  const stored = window.localStorage.getItem("theme");
+  if (stored) return stored;
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+  return "light";
+};
+
 const detectRouteFromPath = () => {
   if (typeof window === "undefined") return "home";
   const rawPath = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -34,6 +42,7 @@ const getLangPrefix = () => {
 
 function App() {
   const [lang, setLang] = useState(detectLangFromPath);
+  const [theme, setTheme] = useState(detectTheme);
   const route = detectRouteFromPath();
   const isAboutPage = route === "about";
   const isWorkPage = route === "work";
@@ -109,6 +118,12 @@ function App() {
 
     return () => observer.disconnect();
   }, [lang]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    document.documentElement.setAttribute("data-theme", theme);
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     const chips = Array.from(document.querySelectorAll(".skill-chip"));
@@ -265,6 +280,8 @@ function App() {
           onLangChange={switchLanguage}
           labels={content.ui?.footer}
           linkPrefix={langPrefix}
+          theme={theme}
+          onThemeChange={setTheme}
         />
         <Analytics />
         <SpeedInsights />
