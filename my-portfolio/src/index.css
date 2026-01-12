@@ -126,18 +126,23 @@ img {
   0% {
     background-position: 0 0;
   }
+
   20% {
     background-position: -20px 14px;
   }
+
   40% {
     background-position: 16px -18px;
   }
+
   60% {
     background-position: -12px -12px;
   }
+
   80% {
     background-position: 18px 10px;
   }
+
   100% {
     background-position: 0 0;
   }
