@@ -5,9 +5,13 @@
   align-items: flex-start;
   padding-top: 8px;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   min-height: 100vh;
   position: relative;
+}
+
+html[data-theme="dark"] .masthead {
+  border-bottom: 1px solid var(--line);
 }
 
 .masthead__intro {
@@ -250,6 +254,10 @@
   justify-content: space-between;
   gap: 24px;
   padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .meta-item {
   border-bottom: 1px solid var(--line);
 }
 

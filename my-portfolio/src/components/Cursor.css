@@ -104,3 +104,11 @@ html[data-theme="dark"] .cursor-ring {
 html[data-theme="dark"] .cursor--hover .cursor-ring {
   border-color: rgba(242, 242, 242, 1);
 }
+
+html[data-theme="dark"] .cursor-arrow {
+  color: rgba(242, 242, 242, 0.9);
+}
+
+html[data-theme="dark"] .cursor--selecting .cursor-arrow {
+  color: rgba(242, 242, 242, 1);
+}

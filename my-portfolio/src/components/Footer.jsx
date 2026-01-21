@@ -8,6 +8,7 @@ function Footer({
   linkPrefix = "",
   theme = "light",
   onThemeChange,
+  currentRoute = "home",
 }) {
   const selectLang = (code) => {
     onLangChange?.(code);
@@ -59,8 +60,8 @@ function Footer({
         <div className="footer-group">
           <span className="footer-label">{pages}</span>
           <div className="footer-pages">
-            <a href={buildInternalHref("/work")}>{work}</a>
-            <a href={buildInternalHref("/about")}>{about}</a>
+            <a href={buildInternalHref("/work")} className={currentRoute === "work" ? "is-active" : ""}>{work}</a>
+            <a href={buildInternalHref("/about")} className={currentRoute === "about" ? "is-active" : ""}>{about}</a>
           </div>
         </div>
         <div className="footer-group">

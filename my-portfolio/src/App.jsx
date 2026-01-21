@@ -282,6 +282,7 @@ function App() {
           linkPrefix={langPrefix}
           theme={theme}
           onThemeChange={setTheme}
+          currentRoute={route}
         />
         <Analytics />
         <SpeedInsights />
