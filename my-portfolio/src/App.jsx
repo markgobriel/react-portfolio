@@ -53,6 +53,7 @@ function App() {
   };
   const homeHref = withLangPrefix("/");
   const workHref = withLangPrefix("/work");
+  const aboutHref = withLangPrefix("/about");
   const [nameHover, setNameHover] = useState(false);
   const [eduHover, setEduHover] = useState(false);
   const nameHoverImage = "https://i.giphy.com/media/3NtY188QaxDdC/giphy.gif";
@@ -79,6 +80,7 @@ function App() {
   const selectedWorksTitle = homeUi.selectedWorks || "selected works";
   const selectedWorkAria = homeUi.selectedWorkAria || "open";
   const viewAllLabel = homeUi.viewAllWork || "view all my work";
+  const shippedAboutLine = (content.about || []).find((line) => line.includes("0 to shipped")) || "";
 
   const switchLanguage = (code) => {
     if (code === lang) return;
@@ -192,6 +194,7 @@ function App() {
               heroEmphasis={content.heroEmphasis}
               tagline={content.tagline}
               taglineTokens={content.taglineTokens}
+              showTagline={false}
               meta={meta}
               portrait={content.portrait}
               resumeHref={resumeHref}
@@ -200,6 +203,34 @@ function App() {
               eyebrowTouchLabel={content.ui.eyebrowTouch}
               onNameHover={setNameHover}
             />
+            <section className="home-intro" aria-label="intro">
+              <div
+                className="home-intro__tagline"
+                dangerouslySetInnerHTML={{
+                  __html: content.tagline,
+                }}
+              />
+              {shippedAboutLine ? <p className="home-intro__about-line">{shippedAboutLine}</p> : null}
+              <div className="home-intro__meta" aria-label="quick info">
+                <div className="home-intro__meta-row">
+                  <span className="home-intro__meta-label">{content.ui?.meta?.focus || "focus"}:</span>{" "}
+                  <span className="home-intro__meta-value">{content.focus}</span>
+                </div>
+                <div className="home-intro__meta-row">
+                  <span className="home-intro__meta-label">{content.ui?.meta?.currently || "currently"}:</span>{" "}
+                  <span className="home-intro__meta-value">{content.currently}</span>
+                </div>
+              </div>
+              <div className="home-intro__learn-more">learn more</div>
+              <div className="home-intro__actions" aria-label="learn more pages">
+                <a className="home-intro__link" href={workHref}>
+                  {content.ui?.footer?.work || "work"}
+                </a>
+                <a className="home-intro__link" href={aboutHref}>
+                  {content.ui?.footer?.about || "about"}
+                </a>
+              </div>
+            </section>
             <section className="selected-works" aria-label={selectedWorksTitle}>
               <div className="selected-works-head">
                 <h3>{selectedWorksTitle}</h3>
@@ -247,25 +278,21 @@ function App() {
               </div>
               <div className="timeline-list">
                 {timelineItems.map((item, index) => {
-                  const isLeft = index % 2 === 0;
-                  const showYear = index === 0 || item.year !== timelineItems[index - 1]?.year;
                   return (
-                    <div className={`timeline-item ${isLeft ? 'timeline-item--left' : 'timeline-item--right'}`} key={`${item.title}-${item.date}`}>
-                      {showYear && <div className="timeline-year">{item.year}</div>}
-                      <span className="timeline-dot" aria-hidden="true"></span>
-                      <div className="timeline-content">
-                        <div className="timeline-row">
-                          {item.href ? (
-                            <a className="timeline-title" href={item.href} target="_blank" rel="noreferrer">
-                              {item.title}
-                            </a>
-                          ) : (
-                            <span className="timeline-title">{item.title}</span>
-                          )}
-                          <span className="timeline-date">{item.date}</span>
-                        </div>
-                        {item.detail ? <div className="timeline-detail">{item.detail}</div> : null}
-                        {item.description ? <div className="timeline-description">{item.description}</div> : null}
+                    <div className="timeline-item" key={`${item.title}-${item.date}`}>
+                      <div className="timeline-header">
+                        <span className="timeline-date">({item.date})</span>
+                        {item.href ? (
+                          <a className="timeline-title" href={item.href} target="_blank" rel="noreferrer">
+                            {item.title}
+                          </a>
+                        ) : (
+                          <span className="timeline-title">{item.title}</span>
+                        )}
+                      </div>
+                      <div className="timeline-body">
+                        <div className="timeline-location">{item.detail || "remote"}</div>
+                        <div className="timeline-description">{item.description}</div>
                       </div>
                     </div>
                   );

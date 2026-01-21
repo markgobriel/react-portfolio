@@ -76,7 +76,7 @@ html[data-theme="dark"] .masthead {
 
 .masthead h1 {
   font-size: clamp(4.8rem, 9vw, 8.4rem);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.07em;
   line-height: 0.85;
   margin: 0;

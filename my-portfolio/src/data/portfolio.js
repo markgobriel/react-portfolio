@@ -131,10 +131,18 @@ const portfolio = {
       title: "timeline",
       items: [
         {
-          title: "university of colorado",
+          title: "ran my first marathon",
+          date: "october 19 2025",
+          detail: "toronto, on",
+          description: "finished the TCS toronto waterfront marathon in 4:42.",
+          year: 2025,
+        },
+        {
+          title: "earned a certificate in SDLC",
           date: "september 2025",
-          detail: "software design as an element of the software development lifecycle",
-          description: "earned certification in advanced development practices.",
+          detail: "remote",
+          description:
+            "completed a Software Development Lifecycle (SDLC) certificate from the University of Colorado.",
           href: "https://www.coursera.org/account/accomplishments/verify/495TOWMTJK3P",
           year: 2025,
         },
@@ -147,6 +155,13 @@ const portfolio = {
           year: 2025,
         },
         {
+          title: "my first 1k in sales day @ motherland",
+          date: "february 28 2025",
+          detail: "online",
+          description: "hit my first $1k sales day with motherland.",
+          year: 2025,
+        },
+        {
           title: "ceo & founder @ motherland clothing",
           date: "february 2024 – present",
           detail: "mississauga, on",
@@ -156,7 +171,7 @@ const portfolio = {
         },
         {
           title: "started computer science @ university of toronto",
-          date: "september 2023",
+          date: "september 2023 – present",
           detail: "toronto, on",
           description: "honours bachelor of science, computer science (minor in business).",
           year: 2023,
@@ -479,10 +494,18 @@ const portfolio = {
       title: "chronologie",
       items: [
         {
-          title: "université du colorado",
+          title: "j'ai couru mon premier marathon",
+          date: "19 octobre 2025",
+          detail: "toronto, on",
+          description: "terminé le tcs toronto waterfront marathon en 4:42.",
+          year: 2025,
+        },
+        {
+          title: "obtenu un certificat en SDLC",
           date: "septembre 2025",
-          detail: "software design as an element of the software development lifecycle",
-          description: "certification obtenue en pratiques avancées de développement.",
+          detail: "distant",
+          description:
+            "certificat en cycle de vie du développement logiciel (SDLC) de l'université du colorado.",
           href: "https://www.coursera.org/account/accomplishments/verify/495TOWMTJK3P",
           year: 2025,
         },
@@ -495,6 +518,13 @@ const portfolio = {
           year: 2025,
         },
         {
+          title: "première journée à 1k$ de ventes @ motherland",
+          date: "28 février 2025",
+          detail: "en ligne",
+          description: "atteint ma première journée à 1k$ de ventes avec motherland.",
+          year: 2025,
+        },
+        {
           title: "fondateur & ceo @ motherland clothing",
           date: "févr 2024 – présent",
           detail: "mississauga, on",
@@ -504,7 +534,7 @@ const portfolio = {
         },
         {
           title: "début informatique à l'université de toronto",
-          date: "septembre 2023",
+          date: "septembre 2023 – présent",
           detail: "toronto, on",
           description: "baccalauréat en informatique (mineure en business).",
           year: 2023,

@@ -8,6 +8,7 @@ function Masthead({
   heroEmphasis,
   tagline,
   taglineTokens,
+  showTagline = true,
   meta,
   portrait,
   resumeHref,
@@ -97,7 +98,7 @@ function Masthead({
           </span>
           <span className="hero-line">{line2}</span>
         </h1>
-        {renderTagline()}
+        {showTagline ? renderTagline() : null}
         {/* {resumeHref && (
           <div className="masthead__actions">
             <a className="resume-top" href={resumeHref} target="_blank" rel="noreferrer">
