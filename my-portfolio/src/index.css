@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
 
 :root {
+  color-scheme: dark;
+  --paper: #000000;
+  --paper-strong: #000000;
+  --ink: #f2f2f2;
+  --muted: #b8b8b8;
+  --line: #0f0f0f;
+  --accent: #f2f2f2;
+  --accent-soft: #000000;
+}
+
+html[data-theme="light"] {
   color-scheme: light;
   --paper: #f7f7f7;
   --paper-strong: #efefef;

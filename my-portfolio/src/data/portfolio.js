@@ -100,7 +100,7 @@ const portfolio = {
       },
       {
         label: "recent experience",
-        value: "generated 5 figures in revenue @ motherland.",
+        value: "software engineer @ savi finance.",
       },
       {
         label: "previous",
@@ -130,6 +130,14 @@ const portfolio = {
     timeline: {
       title: "timeline",
       items: [
+        {
+          title: "software engineer @ savi finance",
+          date: "january 2026 – april 2026",
+          detail: "toronto, on",
+          description:
+            "leading ux + frontend for credit card optimization flows and integrating plaid + spinwheel data pipelines.",
+          year: 2026,
+        },
         {
           title: "ran my first marathon",
           date: "october 19 2025",
@@ -188,6 +196,18 @@ const portfolio = {
       },
     ],
     experience: [
+      {
+        role: "software engineer",
+        org: "Savi Finance",
+        date: "january 2026 – april 2026",
+        location: "toronto, on",
+        link: "https://financesavi.com/",
+        bullets: [
+          "leading UX + frontend for a credit card optimization feature, delivering 5 user stories as React Native screens with supporting endpoints.",
+          "integrating Plaid + Spinwheel APIs to pull real-time card/account data and balances for spend optimization.",
+          "using Perplexity Sonar API + Gemini Flash to structure rewards/rates, targeting a ~10-20% increase in rewards value for users.",
+        ],
+      },
       {
         role: "full stack developer intern",
         org: "Futura Holding Group",
@@ -463,7 +483,7 @@ const portfolio = {
       },
       {
         label: "expérience récente",
-        value: "5 chiffres de revenus générés @ motherland.",
+        value: "software engineer @ savi finance.",
       },
       {
         label: "précédent",
@@ -493,6 +513,14 @@ const portfolio = {
     timeline: {
       title: "chronologie",
       items: [
+        {
+          title: "software engineer @ savi finance",
+          date: "janvier 2026 – avril 2026",
+          detail: "toronto, on",
+          description:
+            "pilotage de l'ux + frontend pour l'optimisation de cartes de crédit et intégration des flux de données plaid + spinwheel.",
+          year: 2026,
+        },
         {
           title: "j'ai couru mon premier marathon",
           date: "19 octobre 2025",
@@ -551,6 +579,18 @@ const portfolio = {
       },
     ],
     experience: [
+      {
+        role: "software engineer",
+        org: "Savi Finance",
+        date: "janvier 2026 – avril 2026",
+        location: "toronto, on",
+        link: "https://financesavi.com/",
+        bullets: [
+          "pilotage de l'ux + frontend d'une fonctionnalité d'optimisation de cartes de crédit, avec 5 user stories livrées sous forme d'écrans React Native et endpoints associés.",
+          "intégration des APIs Plaid + Spinwheel pour récupérer en temps réel les données de cartes/comptes et les soldes afin d'optimiser les dépenses.",
+          "utilisation de l'API Perplexity Sonar + Gemini Flash pour structurer les récompenses/taux, avec un objectif d'augmentation d'environ 10-20% de la valeur des récompenses pour les utilisateurs.",
+        ],
+      },
       {
         role: "stagiaire développeur full stack",
         org: "Futura Holding Group",
