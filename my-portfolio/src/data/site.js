@@ -5,6 +5,7 @@ const site = {
     paragraphs: [
       "I'm a developer who likes to work at the intersection of software and design. I enjoy taking ideas from 0 to shipped and building reliable systems with interfaces that feel thoughtful and polished.",
       "I'm studying computer science at the University of Toronto, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
+      "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. While you're here—I'm glad we crossed paths; hopefully we chat sometime.",
     ],
     currently: "Currently, a web developer at IEC Mortgage & Finance.",
   },
