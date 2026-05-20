@@ -1,7 +1,3 @@
-:root {
-  color-scheme: light;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -12,10 +8,18 @@ body,
   min-height: 100%;
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
-  background: #ffffff;
-  color: #000000;
+  background: var(--page-bg);
+  color: var(--page-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -26,8 +30,8 @@ html.ethan-portfolio {
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 img {

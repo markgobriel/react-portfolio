@@ -1,3 +1,39 @@
+html {
+  --page-bg: #ffffff;
+  --page-text: #000000;
+  --text-muted: #a0a5ac;
+  --text-muted-hover: #c2c6cc;
+  --text-hover: #a0a5ac;
+  --border: #e1e4e8;
+  --selection-bg: #000000;
+  --selection-text: #ffffff;
+  --media-bg: #e1e4e8;
+}
+
+html[data-theme="light"] {
+  --page-bg: #ffffff;
+  --page-text: #000000;
+  --text-muted: #a0a5ac;
+  --text-muted-hover: #c2c6cc;
+  --text-hover: #a0a5ac;
+  --border: #e1e4e8;
+  --selection-bg: #000000;
+  --selection-text: #ffffff;
+  --media-bg: #e1e4e8;
+}
+
+html[data-theme="dark"] {
+  --page-bg: #000000;
+  --page-text: #f2f2f2;
+  --text-muted: #a0a5ac;
+  --text-muted-hover: #6b7078;
+  --text-hover: #a0a5ac;
+  --border: #2a2a2a;
+  --selection-bg: #0066cc;
+  --selection-text: #ffffff;
+  --media-bg: #1a1a1a;
+}
+
 @font-face {
   font-family: "ABC Marist";
   src: url("https://framerusercontent.com/assets/sJ2McoPbw06NGXUxSfUOpiYbDw.woff2") format("woff2");
@@ -18,15 +54,16 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: clamp(48px, 8vw, 96px) clamp(20px, 4vw, 40px) clamp(80px, 10vw, 120px);
-  background: #ffffff;
-  color: #000000;
+  padding: clamp(48px, 8vw, 96px) clamp(12px, 2vw, 20px) clamp(80px, 10vw, 120px);
+  background: var(--page-bg);
+  color: var(--page-text);
   cursor: crosshair;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .portfolio-content {
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -38,7 +75,7 @@
 }
 
 .portfolio-content > * + * {
-  border-top: 1px solid #e1e4e8;
+  border-top: 1px solid var(--border);
   padding-top: clamp(20px, 3vw, 32px);
 }
 
@@ -84,7 +121,7 @@
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
-  color: #a0a5ac;
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
@@ -94,7 +131,7 @@
   font-size: 11px;
   line-height: 13px;
   letter-spacing: -0.01em;
-  color: #a0a5ac;
+  color: var(--text-muted);
 }
 
 .intro-copy {
@@ -109,7 +146,7 @@
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
-  color: #000000;
+  color: var(--page-text);
 }
 
 .intro-copy p:last-child {
@@ -134,7 +171,7 @@
   padding: 3px 0;
   border: 0;
   text-decoration: none;
-  color: #000000;
+  color: var(--page-text);
   font-family: "ABC Marist", "Newsreader", Georgia, serif;
   font-size: 13px;
   line-height: 15px;
@@ -145,13 +182,13 @@
 
 .contact-link:hover,
 .contact-link:focus-visible {
-  color: #a0a5ac;
+  color: var(--text-hover);
   outline: none;
 }
 
 .contact-link:hover .contact-link__arrow,
 .contact-link:focus-visible .contact-link__arrow {
-  color: #a0a5ac;
+  color: var(--text-hover);
 }
 
 .contact-link__num {
@@ -159,7 +196,7 @@
 }
 
 .contact-link__arrow {
-  color: #000000;
+  color: var(--page-text);
   font-size: 13px;
   line-height: 1;
   transition: color 0.15s ease;
@@ -195,6 +232,10 @@
   animation: none;
 }
 
+.portfolio-column--education .entry-detail--inline .entry-detail__period {
+  display: none;
+}
+
 .entries-layout {
   display: flex;
   flex-direction: column;
@@ -208,13 +249,40 @@
 
 .entry-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
   padding: 2px 0;
   cursor: crosshair;
   transition: color 0.15s ease;
+}
+
+.entry-row__main {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.entry-row__mark {
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+}
+
+html[data-theme="dark"] .entry-row__mark {
+  box-shadow: 0 0 0 0.5px var(--border);
+}
+
+.entry-row__logo {
+  height: 13px;
+  width: auto;
+  max-width: 13px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
 }
 
 .entry-row__title,
@@ -226,35 +294,47 @@
 }
 
 .entry-row__title {
-  color: #000000;
+  color: var(--page-text);
+}
+
+.entry-row__title--link {
+  text-decoration: none;
+  border: 0;
+}
+
+.entry-row__title--link:hover,
+.entry-row__title--link:focus-visible {
+  color: var(--text-hover);
+  outline: none;
 }
 
 .entry-row__period {
-  color: #a0a5ac;
+  color: var(--text-muted);
   flex-shrink: 0;
+  align-self: center;
 }
 
 .entry-row.is-active .entry-row__title {
-  color: #000000;
+  color: var(--page-text);
 }
 
 .entry-row:hover .entry-row__title,
 .entry-row:focus-visible .entry-row__title {
-  color: #a0a5ac;
+  color: var(--text-hover);
 }
 
 .entry-row.is-active:hover .entry-row__title,
 .entry-row.is-active:focus-visible .entry-row__title {
-  color: #000000;
+  color: var(--page-text);
 }
 
 .entry-row:hover .entry-row__period,
 .entry-row:focus-visible .entry-row__period {
-  color: #c2c6cc;
+  color: var(--text-muted-hover);
 }
 
 .entry-row.is-active .entry-row__period {
-  color: #a0a5ac;
+  color: var(--text-muted);
 }
 
 .entry-row:focus-visible {
@@ -292,7 +372,7 @@
   aspect-ratio: 3 / 2;
   border-radius: 4px;
   overflow: hidden;
-  background: #e1e4e8;
+  background: var(--media-bg);
 }
 
 .entry-detail__media img {
@@ -308,7 +388,7 @@
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
-  color: #000000;
+  color: var(--page-text);
   text-decoration: none;
   border: 0;
   cursor: crosshair;
@@ -316,7 +396,7 @@
 
 a.entry-detail__title:hover,
 a.entry-detail__title:focus-visible {
-  color: #a0a5ac;
+  color: var(--text-hover);
   outline: none;
 }
 
@@ -330,12 +410,12 @@ a.entry-detail__title:focus-visible {
 }
 
 .entry-detail__description {
-  color: #000000;
+  color: var(--page-text);
 }
 
 .entry-detail__credit {
   margin-top: 8px;
-  color: #a0a5ac;
+  color: var(--text-muted);
   font-size: 11px;
   line-height: 13px;
 }
@@ -346,11 +426,15 @@ a.entry-detail__title:focus-visible {
   font-family: "ABC Marist", "Newsreader", Georgia, serif;
   font-size: 11px;
   line-height: 13px;
-  color: #a0a5ac;
+  color: var(--text-muted);
 }
 
 .portfolio-footer {
   margin: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .portfolio-footer p {
@@ -359,7 +443,41 @@ a.entry-detail__title:focus-visible {
   font-size: 11px;
   line-height: 13px;
   letter-spacing: -0.01em;
-  color: #a0a5ac;
+  color: var(--text-muted);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  cursor: crosshair;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--text-hover);
+  outline: none;
+}
+
+.theme-toggle__icon {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 640px) {

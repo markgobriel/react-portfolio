@@ -25,11 +25,10 @@ const site = {
       {
         id: "uoft",
         title: "University of Toronto",
+        logo: "/uoft-logo.svg",
         period: "Sep 2023–Apr 2027",
-        detailTitle: "Computer science @ U of T ↗",
         description:
-          "Honours Bachelor of Science in computer science with a minor in business. Relevant coursework in software design, web programming, databases, and algorithms.",
-        credit: "Toronto, ON",
+          "Honours Bachelor of Science in Computer Science with a minor in Business.",
         image: null,
         href: "https://www.utoronto.ca",
       },
@@ -43,6 +42,7 @@ const site = {
       {
         id: "iec",
         title: "IEC Mortgage & Finance",
+        markColor: "#1a3a5c",
         period: "May 2026–Present",
         detailTitle: "Web developer @ IEC Mortgage & Finance",
         description:
@@ -54,6 +54,7 @@ const site = {
       {
         id: "savi",
         title: "Savi Finance",
+        markColor: "#0d9488",
         period: "Jan 2026–Apr 2026",
         detailTitle: "Software engineer @ Savi Finance ↗",
         description:
@@ -65,6 +66,7 @@ const site = {
       {
         id: "futura",
         title: "Futura Holding Group",
+        markColor: "#c2c6cc",
         period: "May 2025–Aug 2025",
         detailTitle: "Full-stack developer intern @ Futura ↗",
         description:
@@ -76,6 +78,7 @@ const site = {
       {
         id: "motherland",
         title: "Motherland Clothing",
+        markColor: "#000000",
         period: "Feb 2024–Present",
         detailTitle: "CEO & founder @ Motherland ↗",
         description:

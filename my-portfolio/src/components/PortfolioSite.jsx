@@ -9,6 +9,26 @@ const superscript = (index) => {
   return digits.map((d) => SUPERS[Number(d)] || d).join("");
 };
 
+const detectTheme = () => {
+  if (typeof window === "undefined") return "light";
+  const stored = window.localStorage.getItem("theme");
+  if (stored === "light" || stored === "dark") return stored;
+  return "light";
+};
+
+const MoonIcon = () => (
+  <svg className="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
+const SunIcon = () => (
+  <svg className="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+  </svg>
+);
+
 const SectionHeader = ({ title, index }) => (
   <div className="section-header">
     <h2 className="section-title">{title}</h2>
@@ -48,21 +68,33 @@ const EntryRow = ({ item, active, onEnter, onFocus }) => (
       }
     }}
   >
-    <span className="entry-row__title">{item.title}</span>
+    <span className="entry-row__main">
+      {item.logo ? (
+        <img className="entry-row__logo" src={item.logo} alt="" aria-hidden="true" />
+      ) : null}
+      {item.markColor ? (
+        <span className="entry-row__mark" style={{ backgroundColor: item.markColor }} aria-hidden="true" />
+      ) : null}
+      {item.href ? (
+        <a
+          className="entry-row__title entry-row__title--link"
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(event) => event.stopPropagation()}
+        >
+          {item.title}
+        </a>
+      ) : (
+        <span className="entry-row__title">{item.title}</span>
+      )}
+    </span>
     <span className="entry-row__period">{item.period}</span>
   </div>
 );
 
 const EntryDetail = ({ item, className = "" }) => {
   if (!item) return null;
-
-  const title = item.href ? (
-    <a className="entry-detail__title" href={item.href} target="_blank" rel="noreferrer">
-      {item.detailTitle}
-    </a>
-  ) : (
-    <span className="entry-detail__title">{item.detailTitle}</span>
-  );
 
   return (
     <div className={`entry-detail${className ? ` ${className}` : ""}`} aria-live="polite">
@@ -73,9 +105,17 @@ const EntryDetail = ({ item, className = "" }) => {
           </div>
         ) : null}
         <div className="entry-detail__copy">
-          {title}
+          {item.detailTitle ? (
+            item.href ? (
+              <a className="entry-detail__title" href={item.href} target="_blank" rel="noreferrer">
+                {item.detailTitle}
+              </a>
+            ) : (
+              <span className="entry-detail__title">{item.detailTitle}</span>
+            )
+          ) : null}
           <p className="entry-detail__description">{item.description}</p>
-          <p className="entry-detail__credit">{item.credit}</p>
+          {item.credit ? <p className="entry-detail__credit">{item.credit}</p> : null}
         </div>
       </div>
       <p className="entry-detail__period">{item.period}</p>
@@ -151,10 +191,21 @@ const EntrySection = ({ section, headingId }) => {
 };
 
 export default function PortfolioSite() {
+  const [theme, setTheme] = useState(detectTheme);
+
   useEffect(() => {
     document.documentElement.classList.add("ethan-portfolio");
     return () => document.documentElement.classList.remove("ethan-portfolio");
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  };
 
   return (
     <div className="portfolio-page">
@@ -175,6 +226,15 @@ export default function PortfolioSite() {
 
         <footer className="portfolio-footer">
           <p>{site.footer}</p>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            <span>{theme === "dark" ? "light mode" : "dark mode"}</span>
+          </button>
         </footer>
       </main>
     </div>
