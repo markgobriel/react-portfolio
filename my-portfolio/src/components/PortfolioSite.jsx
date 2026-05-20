@@ -9,11 +9,13 @@ const superscript = (index) => {
   return digits.map((d) => SUPERS[Number(d)] || d).join("");
 };
 
+const DEFAULT_THEME = "light";
+
 const detectTheme = () => {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") return DEFAULT_THEME;
   const stored = window.localStorage.getItem("theme");
   if (stored === "light" || stored === "dark") return stored;
-  return "light";
+  return DEFAULT_THEME;
 };
 
 const MoonIcon = () => (
@@ -199,8 +201,9 @@ export default function PortfolioSite() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem("theme", theme);
+    const resolved = theme === "dark" ? "dark" : DEFAULT_THEME;
+    document.documentElement.setAttribute("data-theme", resolved);
+    window.localStorage.setItem("theme", resolved);
   }, [theme]);
 
   const toggleTheme = () => {
