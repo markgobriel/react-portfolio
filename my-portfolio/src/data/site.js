@@ -6,8 +6,7 @@ const site = {
   intro: {
     index: "[1]",
     paragraphs: [
-      "I'm a developer who likes to work at the intersection of software and design. I enjoy taking ideas from 0 to shipped and building reliable systems with interfaces that feel thoughtful and polished.",
-      "I'm studying computer science at the University of Toronto, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
+      "I'm a developer at the intersection of software and design—I take ideas from 0 to shipped and build reliable systems with interfaces that feel thoughtful and polished, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
       "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. While you're here—I'm glad we crossed paths; hopefully we chat sometime.",
     ],
     currently: "Currently, a web developer at IEC Mortgage & Finance.",
@@ -81,10 +80,10 @@ const site = {
       },
       {
         id: "motherland",
-        title: "Motherland Clothing",
+        title: "MOTHERLAND Clothing",
         markColor: "#000000",
-        period: "Feb 2024–Present",
-        detailTitle: "CEO & founder @ Motherland ↗",
+        period: "Feb 2024–Feb 2026",
+        detailTitle: "CEO & Founder @ MOTHERLAND ↗",
         description:
           "Built a production Shopify storefront and cart recovery automations that recovered roughly 40% of abandoned checkouts, generating five figures in revenue across product drops.",
         credit: "Mississauga, ON",
@@ -107,7 +106,7 @@ const site = {
       year: "2025",
     },
   ],
-  footer: "thanks for stopping by. last updated may 2026",
+  footer: "last updated may 2026",
 };
 
 export default site;
