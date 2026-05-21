@@ -1,3 +1,6 @@
+const mediaBase =
+  import.meta.env.VITE_MEDIA_BASE || "https://pub-b6e163dcee7c4ead8d7e751c51676bad.r2.dev";
+
 const site = {
   title: "Mark's Digital Home",
   intro: {
@@ -90,6 +93,20 @@ const site = {
       },
     ],
   },
+  showcases: [
+    {
+      id: "iec-mortgage",
+      video: `${mediaBase}/iec-mortgage-demo.mp4`,
+      title: "Website developed for IEC Mortgage & Finance",
+      year: "2026",
+    },
+    {
+      id: "motherland",
+      video: `${mediaBase}/motherland-demo.mp4`,
+      title: "Shopify website for my clothing brand",
+      year: "2025",
+    },
+  ],
   footer: "thanks for stopping by. last updated may 2026",
 };
 

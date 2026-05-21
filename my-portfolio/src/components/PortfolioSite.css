@@ -429,6 +429,72 @@ a.entry-detail__title:focus-visible {
   color: var(--text-muted);
 }
 
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-showcase__media {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--media-bg);
+}
+
+.project-showcase__video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.project-showcase__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-showcase__title,
+.project-showcase__year {
+  margin: 0;
+  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+}
+
+.project-showcase__title {
+  color: var(--page-text);
+}
+
+.project-showcase__year {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.portfolio-showcases {
+  scroll-margin-top: 12px;
+}
+
+.portfolio-showcases > * {
+  padding-bottom: clamp(20px, 3vw, 32px);
+}
+
+.portfolio-showcases > * + * {
+  border-top: 1px solid var(--border);
+  padding-top: clamp(20px, 3vw, 32px);
+}
+
+.portfolio-showcases > *:last-child {
+  padding-bottom: 0;
+}
+
 .portfolio-content > .portfolio-footer {
   padding-bottom: 0;
 }

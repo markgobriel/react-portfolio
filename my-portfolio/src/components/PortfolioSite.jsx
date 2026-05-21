@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import site from "../data/site";
 import "./PortfolioSite.css";
 
@@ -166,6 +166,46 @@ const ContactEducationSection = () => {
   );
 };
 
+const ProjectShowcase = ({ item }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.playbackRate = 1.25;
+    const play = () => {
+      video.playbackRate = 1.25;
+      video.play().catch(() => {});
+    };
+    play();
+    video.addEventListener("loadeddata", play);
+    return () => video.removeEventListener("loadeddata", play);
+  }, [item.video]);
+
+  return (
+    <article className="project-showcase" aria-label={item.title}>
+      <div className="project-showcase__meta">
+        <p className="project-showcase__title">{item.title}</p>
+        <p className="project-showcase__year">{item.year}</p>
+      </div>
+      <div className="project-showcase__media">
+        <video
+          ref={videoRef}
+          className="project-showcase__video"
+          src={item.video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label={item.title}
+        />
+      </div>
+    </article>
+  );
+};
+
 const EntrySection = ({ section, headingId }) => {
   const [activeId, setActiveId] = useState(section.items[0]?.id);
   const activeItem = section.items.find((item) => item.id === activeId) || section.items[0];
@@ -226,6 +266,12 @@ export default function PortfolioSite() {
         <ContactEducationSection />
 
         <EntrySection section={site.experience} headingId="experience-heading" />
+
+        <div id="portfolio-showcases" className="portfolio-showcases">
+          {site.showcases?.map((item) => (
+            <ProjectShowcase key={item.id} item={item} />
+          ))}
+        </div>
 
         <footer className="portfolio-footer">
           <p>{site.footer}</p>
