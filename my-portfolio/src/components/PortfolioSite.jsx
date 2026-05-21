@@ -18,6 +18,44 @@ const detectTheme = () => {
   return DEFAULT_THEME;
 };
 
+const DownArrowIcon = () => (
+  <svg className="scroll-hint__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 4v11" />
+    <path d="M7.5 12.5 12 17l4.5-4.5" />
+  </svg>
+);
+
+const ScrollToShowcases = () => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 64);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToShowcases = () => {
+    document.getElementById("portfolio-showcases")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      className={`scroll-hint${visible ? "" : " scroll-hint--hidden"}`}
+      onClick={scrollToShowcases}
+      aria-label="Scroll to project videos"
+      tabIndex={visible ? 0 : -1}
+      aria-hidden={!visible}
+    >
+      <DownArrowIcon />
+    </button>
+  );
+};
+
 const MoonIcon = () => (
   <svg className="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
@@ -286,6 +324,7 @@ export default function PortfolioSite() {
           </button>
         </footer>
       </main>
+      <ScrollToShowcases />
     </div>
   );
 }

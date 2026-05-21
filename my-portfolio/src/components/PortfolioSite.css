@@ -496,6 +496,62 @@ a.entry-detail__title:focus-visible {
   padding-bottom: 0;
 }
 
+.scroll-hint {
+  position: fixed;
+  right: clamp(40px, 6vw, 64px);
+  bottom: clamp(20px, 4vw, 32px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: #000000;
+  cursor: crosshair;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+  animation: scroll-hint-bounce 4s ease-in-out infinite;
+}
+
+html[data-theme="dark"] .scroll-hint {
+  color: var(--page-text);
+}
+
+.scroll-hint:hover,
+.scroll-hint:focus-visible {
+  opacity: 1;
+  outline: none;
+}
+
+.scroll-hint--hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+.scroll-hint__icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes scroll-hint-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 .portfolio-content > .portfolio-footer {
   padding-bottom: 0;
 }
@@ -553,7 +609,7 @@ a.entry-detail__title:focus-visible {
 
 @media (max-width: 640px) {
   .portfolio-page {
-    padding-top: 32px;
+    padding-top: 24px;
   }
 
   .section-header {
@@ -572,6 +628,10 @@ a.entry-detail__title:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio-content {
+    animation: none;
+  }
+
+  .scroll-hint {
     animation: none;
   }
 }
