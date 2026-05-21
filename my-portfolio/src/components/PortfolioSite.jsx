@@ -246,6 +246,7 @@ const ProjectShowcase = ({ item }) => {
 const EntrySection = ({ section, headingId }) => {
   const [activeId, setActiveId] = useState(null);
   const [shownId, setShownId] = useState(null);
+  const shownItem = section.items.find((item) => item.id === shownId) ?? null;
 
   useEffect(() => {
     if (activeId) {
@@ -260,25 +261,22 @@ const EntrySection = ({ section, headingId }) => {
     <section className="portfolio-section portfolio-section--entries" aria-labelledby={headingId}>
       <SectionHeader title={section.title} index={section.index} />
       {section.hint ? <p className="section-hint">{section.hint}</p> : null}
-      <div className="entries-layout">
-        <div className="entries-list" role="list" onMouseLeave={() => setActiveId(null)}>
+      <div className="entries-layout" onMouseLeave={() => setActiveId(null)}>
+        <div className="entries-list" role="list">
           {section.items.map((item) => (
-            <div key={item.id} className="entry-item" role="listitem">
-              <EntryRow
-                item={item}
-                active={item.id === activeId}
-                onEnter={() => setActiveId(item.id)}
-                onFocus={() => setActiveId(item.id)}
-              />
-              <div className={`entry-detail-panel${activeId === item.id ? " is-visible" : ""}`}>
-                <div className="entry-detail-panel__inner">
-                  {shownId === item.id ? (
-                    <EntryDetail item={item} className="entry-detail--under-row" />
-                  ) : null}
-                </div>
-              </div>
-            </div>
+            <EntryRow
+              key={item.id}
+              item={item}
+              active={item.id === activeId}
+              onEnter={() => setActiveId(item.id)}
+              onFocus={() => setActiveId(item.id)}
+            />
           ))}
+        </div>
+        <div className={`entry-detail-panel${activeId ? " is-visible" : ""}`}>
+          <div className="entry-detail-panel__inner">
+            {shownItem ? <EntryDetail key={shownItem.id} item={shownItem} /> : null}
+          </div>
         </div>
       </div>
     </section>

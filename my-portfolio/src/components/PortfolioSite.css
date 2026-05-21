@@ -50,6 +50,15 @@ html[data-theme="dark"] {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+.portfolio-page a,
+.portfolio-page button,
+.portfolio-page .contact-link,
+.portfolio-page .entry-row,
+.portfolio-page .scroll-hint,
+.portfolio-page .theme-toggle {
+  cursor: pointer;
+}
+
 .portfolio-content {
   width: 100%;
   max-width: 560px;
@@ -175,7 +184,6 @@ html[data-theme="dark"] {
   line-height: 14px;
   letter-spacing: -0.01em;
   transition: color 0.15s ease;
-  cursor: crosshair;
 }
 
 .contact-link:hover,
@@ -230,27 +238,22 @@ html[data-theme="dark"] {
   animation: none;
 }
 
-.portfolio-column--education .entry-detail--inline .entry-detail__period,
-.entry-detail--under-row .entry-detail__period {
+.portfolio-column--education .entry-detail--inline .entry-detail__period {
   display: none;
-}
-
-.entry-detail--under-row {
-  gap: 8px;
-  padding: 6px 0 4px 9px;
 }
 
 .entries-layout {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+  transition: gap 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-section--entries .entries-layout:not(:has(.entry-detail-panel.is-visible)) {
+  gap: 0;
 }
 
 .entries-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.entry-item {
   display: flex;
   flex-direction: column;
 }
@@ -262,7 +265,6 @@ html[data-theme="dark"] {
   gap: 16px;
   width: 100%;
   padding: 2px 0;
-  cursor: crosshair;
   transition: color 0.15s ease;
 }
 
@@ -418,7 +420,6 @@ html[data-theme="dark"] .entry-row__mark {
   color: var(--page-text);
   text-decoration: none;
   border: 0;
-  cursor: crosshair;
 }
 
 a.entry-detail__title:hover,
@@ -534,7 +535,6 @@ a.entry-detail__title:focus-visible {
   border: 0;
   background: none;
   color: #000000;
-  cursor: crosshair;
   opacity: 0.85;
   transition: opacity 0.4s ease;
   animation: scroll-hint-bounce 4s ease-in-out infinite;
@@ -611,7 +611,6 @@ html[data-theme="dark"] .scroll-hint {
   line-height: 12px;
   letter-spacing: -0.01em;
   color: var(--text-muted);
-  cursor: crosshair;
   flex-shrink: 0;
   transition: color 0.15s ease;
 }
@@ -662,6 +661,10 @@ html[data-theme="dark"] .scroll-hint {
   }
 
   .entry-detail-panel {
+    transition: none;
+  }
+
+  .entries-layout {
     transition: none;
   }
 
