@@ -47,7 +47,7 @@ const site = {
         title: "IEC Mortgage & Finance",
         markColor: "#1a3a5c",
         period: "May 2026–Present",
-        detailTitle: "Web developer @ IEC Mortgage & Finance",
+        detailTitle: "Role: Web Developer",
         description:
           "Designing and developing a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
         credit: "Toronto, ON",
@@ -59,7 +59,7 @@ const site = {
         title: "Savi Finance",
         markColor: "#0d9488",
         period: "Jan 2026–Apr 2026",
-        detailTitle: "Software engineer @ Savi Finance ↗",
+        detailTitle: "Role: Software Engineer",
         description:
           "Led UX and frontend for credit card optimization flows and integrated Plaid + Spinwheel data pipelines.",
         credit: "Toronto, ON",
@@ -71,7 +71,7 @@ const site = {
         title: "Futura Holding Group",
         markColor: "#c2c6cc",
         period: "May 2025–Aug 2025",
-        detailTitle: "Full-stack developer intern @ Futura ↗",
+        detailTitle: "Role: Web Developer",
         description:
           "Built and shipped the Futura Art Gallery Foundation site with a custom WordPress theme and reusable UI components.",
         credit: "Toronto, ON",
@@ -83,7 +83,7 @@ const site = {
         title: "MOTHERLAND Clothing",
         markColor: "#000000",
         period: "Feb 2024–Feb 2026",
-        detailTitle: "CEO & Founder @ MOTHERLAND ↗",
+        detailTitle: "Role: CEO & Founder",
         description:
           "Built a production Shopify storefront and cart recovery automations that recovered roughly 40% of abandoned checkouts, generating five figures in revenue across product drops.",
         credit: "Mississauga, ON",
@@ -91,6 +91,10 @@ const site = {
         href: "https://wearmotherland.com",
       },
     ],
+  },
+  gallery: {
+    index: "[5]",
+    title: "Gallery",
   },
   showcases: [
     {

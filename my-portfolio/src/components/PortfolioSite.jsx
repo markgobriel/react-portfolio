@@ -158,7 +158,6 @@ const EntryDetail = ({ item, className = "" }) => {
           {item.credit ? <p className="entry-detail__credit">{item.credit}</p> : null}
         </div>
       </div>
-      <p className="entry-detail__period">{item.period}</p>
     </div>
   );
 };
@@ -246,25 +245,41 @@ const ProjectShowcase = ({ item }) => {
 
 const EntrySection = ({ section, headingId }) => {
   const [activeId, setActiveId] = useState(null);
-  const activeItem = section.items.find((item) => item.id === activeId) ?? null;
+  const [shownId, setShownId] = useState(null);
+
+  useEffect(() => {
+    if (activeId) {
+      setShownId(activeId);
+      return undefined;
+    }
+    const timer = window.setTimeout(() => setShownId(null), 480);
+    return () => window.clearTimeout(timer);
+  }, [activeId]);
 
   return (
     <section className="portfolio-section portfolio-section--entries" aria-labelledby={headingId}>
       <SectionHeader title={section.title} index={section.index} />
       {section.hint ? <p className="section-hint">{section.hint}</p> : null}
-      <div className="entries-layout" onMouseLeave={() => setActiveId(null)}>
-        <div className="entries-list" role="list">
+      <div className="entries-layout">
+        <div className="entries-list" role="list" onMouseLeave={() => setActiveId(null)}>
           {section.items.map((item) => (
-            <EntryRow
-              key={item.id}
-              item={item}
-              active={item.id === activeId}
-              onEnter={() => setActiveId(item.id)}
-              onFocus={() => setActiveId(item.id)}
-            />
+            <div key={item.id} className="entry-item" role="listitem">
+              <EntryRow
+                item={item}
+                active={item.id === activeId}
+                onEnter={() => setActiveId(item.id)}
+                onFocus={() => setActiveId(item.id)}
+              />
+              <div className={`entry-detail-panel${activeId === item.id ? " is-visible" : ""}`}>
+                <div className="entry-detail-panel__inner">
+                  {shownId === item.id ? (
+                    <EntryDetail item={item} className="entry-detail--under-row" />
+                  ) : null}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        {activeItem ? <EntryDetail key={activeItem.id} item={activeItem} /> : null}
       </div>
     </section>
   );
@@ -305,11 +320,14 @@ export default function PortfolioSite() {
 
         <EntrySection section={site.experience} headingId="experience-heading" />
 
-        <div id="portfolio-showcases" className="portfolio-showcases">
-          {site.showcases?.map((item) => (
-            <ProjectShowcase key={item.id} item={item} />
-          ))}
-        </div>
+        <section className="portfolio-section portfolio-section--gallery" aria-labelledby="gallery-heading">
+          <SectionHeader title={site.gallery.title} index={site.gallery.index} />
+          <div id="portfolio-showcases" className="portfolio-showcases">
+            {site.showcases?.map((item) => (
+              <ProjectShowcase key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
 
         <footer className="portfolio-footer">
           <p>{site.footer}</p>
