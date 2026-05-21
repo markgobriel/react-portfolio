@@ -207,14 +207,14 @@ const ProjectShowcase = ({ item }) => {
 };
 
 const EntrySection = ({ section, headingId }) => {
-  const [activeId, setActiveId] = useState(section.items[0]?.id);
-  const activeItem = section.items.find((item) => item.id === activeId) || section.items[0];
+  const [activeId, setActiveId] = useState(null);
+  const activeItem = section.items.find((item) => item.id === activeId) ?? null;
 
   return (
     <section className="portfolio-section portfolio-section--entries" aria-labelledby={headingId}>
       <SectionHeader title={section.title} index={section.index} />
       {section.hint ? <p className="section-hint">{section.hint}</p> : null}
-      <div className="entries-layout">
+      <div className="entries-layout" onMouseLeave={() => setActiveId(null)}>
         <div className="entries-list" role="list">
           {section.items.map((item) => (
             <EntryRow
@@ -226,7 +226,7 @@ const EntrySection = ({ section, headingId }) => {
             />
           ))}
         </div>
-        <EntryDetail key={activeItem?.id} item={activeItem} />
+        {activeItem ? <EntryDetail key={activeItem.id} item={activeItem} /> : null}
       </div>
     </section>
   );
