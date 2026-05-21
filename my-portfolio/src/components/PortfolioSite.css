@@ -1,4 +1,5 @@
 html {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --page-bg: #ffffff;
   --page-text: #000000;
   --text-muted: #a0a5ac;
@@ -34,23 +35,8 @@ html[data-theme="dark"] {
   --media-bg: #252528;
 }
 
-@font-face {
-  font-family: "ABC Marist";
-  src: url("https://framerusercontent.com/assets/sJ2McoPbw06NGXUxSfUOpiYbDw.woff2") format("woff2");
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SF Mono";
-  src: url("https://framerusercontent.com/assets/TW9AHr9uxtoZMVifnglcDzx14Q.otf") format("opentype");
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .portfolio-page {
+  font-family: var(--font-sans);
   min-height: auto;
   display: flex;
   justify-content: center;
@@ -109,7 +95,7 @@ html[data-theme="dark"] {
 
 .section-title {
   margin: 0;
-  font-family: "ABC Marist", "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-family: inherit;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.03em;
@@ -117,7 +103,7 @@ html[data-theme="dark"] {
 }
 
 .section-index {
-  font-family: "SF Mono", "SF Mono Regular", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -127,7 +113,7 @@ html[data-theme="dark"] {
 
 .section-hint {
   margin: -8px 0 12px;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 11px;
   line-height: 13px;
   letter-spacing: -0.01em;
@@ -142,7 +128,7 @@ html[data-theme="dark"] {
 
 .intro-copy p {
   margin: 0 0 1em;
-  font-family: "ABC Marist", "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -172,7 +158,7 @@ html[data-theme="dark"] {
   border: 0;
   text-decoration: none;
   color: var(--page-text);
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -192,7 +178,7 @@ html[data-theme="dark"] {
 }
 
 .contact-link__num {
-  font-family: "SF Mono", ui-monospace, monospace;
+  font-family: inherit;
 }
 
 .contact-link__arrow {
@@ -287,7 +273,7 @@ html[data-theme="dark"] .entry-row__mark {
 
 .entry-row__title,
 .entry-row__period {
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -384,7 +370,7 @@ html[data-theme="dark"] .entry-row__mark {
 .entry-detail__title {
   display: inline-block;
   margin: 0 0 8px;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -403,7 +389,7 @@ a.entry-detail__title:focus-visible {
 .entry-detail__description,
 .entry-detail__credit {
   margin: 0;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -423,7 +409,7 @@ a.entry-detail__title:focus-visible {
 .entry-detail__period {
   margin: 0;
   align-self: flex-end;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 11px;
   line-height: 13px;
   color: var(--text-muted);
@@ -461,7 +447,7 @@ a.entry-detail__title:focus-visible {
 .project-showcase__title,
 .project-showcase__year {
   margin: 0;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.01em;
@@ -509,7 +495,7 @@ a.entry-detail__title:focus-visible {
 
 .portfolio-footer p {
   margin: 0;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 11px;
   line-height: 13px;
   letter-spacing: -0.01em;
@@ -523,7 +509,7 @@ a.entry-detail__title:focus-visible {
   padding: 0;
   border: 0;
   background: none;
-  font-family: "ABC Marist", "Newsreader", Georgia, serif;
+  font-family: inherit;
   font-size: 11px;
   line-height: 13px;
   letter-spacing: -0.01em;

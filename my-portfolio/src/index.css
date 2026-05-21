@@ -22,6 +22,7 @@ html[data-theme="dark"] {
 
 body {
   margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: var(--page-bg);
   color: var(--page-text);
   -webkit-font-smoothing: antialiased;
