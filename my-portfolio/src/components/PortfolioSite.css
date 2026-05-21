@@ -38,9 +38,12 @@ html[data-theme="dark"] {
 .portfolio-page {
   font-family: var(--font-sans);
   min-height: auto;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
-  padding: clamp(48px, 8vw, 96px) clamp(12px, 2vw, 20px) 30px;
+  padding: clamp(36px, 6vw, 72px) clamp(12px, 2vw, 20px) 30px;
   background: var(--page-bg);
   color: var(--page-text);
   cursor: crosshair;
@@ -50,6 +53,8 @@ html[data-theme="dark"] {
 .portfolio-content {
   width: 100%;
   max-width: 560px;
+  min-width: 0;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 0;
