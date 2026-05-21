@@ -102,6 +102,12 @@ html[data-theme="dark"] {
   font-weight: 400;
 }
 
+.portfolio-section--split .section-title,
+.portfolio-section--entries .section-title {
+  font-size: 15px;
+  line-height: 18px;
+}
+
 .section-index {
   font-family: inherit;
   font-size: 12px;
@@ -333,6 +339,10 @@ html[data-theme="dark"] .entry-row__mark {
   gap: 12px;
   min-height: 120px;
   animation: detail-fade 0.35s ease both;
+}
+
+.portfolio-section--entries .entries-layout:not(:has(.entry-detail)) {
+  gap: 0;
 }
 
 @keyframes detail-fade {
