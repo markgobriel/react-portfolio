@@ -6,10 +6,10 @@ const site = {
   intro: {
     index: "[1]",
     paragraphs: [
-      "I'm a developer at the intersection of software and design—I take ideas from 0 to shipped and build reliable systems with interfaces that feel thoughtful and polished, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
-      "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. While you're here—I'm glad we crossed paths; hopefully we chat sometime.",
+      "I'm a developer at the intersection of software and design. I take ideas from 0 to shipped and build reliable systems with interfaces that feel thoughtful and polished, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
+      "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. I'm glad we crossed paths; hopefully we chat sometime.",
     ],
-    currently: "Currently, a web developer at IEC Mortgage & Finance.",
+    currently: "Currently, looking for a full-stack developer internship starting september 2026",
   },
   contact: {
     index: "[2]",
