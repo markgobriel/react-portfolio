@@ -9,7 +9,7 @@ const site = {
       "I'm a developer at the intersection of software and design. I take ideas from 0 to shipped and build reliable systems with interfaces that feel thoughtful and polished, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
       "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. I'm glad we crossed paths; hopefully we chat sometime.",
     ],
-    currently: "Currently, looking for a full-stack developer internship starting september 2026.",
+    currently: "Currently, looking for an internship starting September 2026.",
   },
   contact: {
     index: "[2]",
@@ -31,7 +31,7 @@ const site = {
         logo: "/uoft-logo.svg",
         period: "Sep 2023–Apr 2027",
         description:
-          "Honours Bachelor of Science in Computer Science with a minor in Business.",
+          "Honours Bachelor of Science in Computer Science with a minor in Business and Mathematical Sciences.",
         image: null,
         href: "https://www.utoronto.ca",
       },
@@ -46,7 +46,7 @@ const site = {
         id: "iec",
         title: "IEC Mortgage & Finance",
         markColor: "#1a3a5c",
-        period: "May 2026–Present",
+        period: "May 2026–June 2026",
         detailTitle: "Role: Web Developer",
         description:
           "Designing and developing a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
