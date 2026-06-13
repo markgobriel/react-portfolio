@@ -49,7 +49,7 @@ const site = {
         period: "May 2026–June 2026",
         detailTitle: "Role: Web Developer",
         description:
-          "Designing and developing a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
+          "Designed and developed a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
         credit: "Toronto, ON",
         image: null,
         href: null,
@@ -110,7 +110,7 @@ const site = {
       year: "2025",
     },
   ],
-  footer: "last updated may 2026",
+  footer: "last updated june 2026",
 };
 
 export default site;
