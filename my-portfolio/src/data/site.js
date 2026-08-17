@@ -9,7 +9,6 @@ const site = {
       "I'm a developer at the intersection of software and design. I take ideas from 0 to shipped and build reliable systems with interfaces that feel thoughtful and polished, with a focus on full-stack development—building dependable backends, clear APIs, and front ends that are clean and practical.",
       "Outside of school and work, I'm an avid gym goer, marathon runner, and I love playing soccer. I'm glad we crossed paths; hopefully we chat sometime.",
     ],
-    currently: "Currently, looking for an internship starting September 2026.",
   },
   contact: {
     index: "[2]",
@@ -110,7 +109,7 @@ const site = {
       year: "2025",
     },
   ],
-  footer: "last updated june 2026",
+  footer: "last updated august 2026",
 };
 
 export default site;

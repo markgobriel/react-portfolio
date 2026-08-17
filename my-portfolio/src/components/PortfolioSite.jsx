@@ -310,7 +310,6 @@ export default function PortfolioSite() {
             {site.intro.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 24)}>{paragraph}</p>
             ))}
-            <p className="intro-currently">{site.intro.currently}</p>
           </div>
         </section>
 
