@@ -42,6 +42,18 @@ const site = {
     hint: "(hover over each experience for more detail)",
     items: [
       {
+        id: "tpay-mobile",
+        title: "TPay Mobile",
+        markColor: "#0d9488",
+        period: "July 2026–August 2026",
+        detailTitle: "Role: Software Engineer",
+        description:
+          "Developed an agent-first engineering harness that enabled autonomous AI agents to work through structured workflows, repository context, and validation feedback loops.",
+        credit: "Cairo, Egypt",
+        image: null,
+        href: null,
+      },
+      {
         id: "eccc",
         title: "Environment and Climate Change Canada",
         markColor: "#FF0000",
