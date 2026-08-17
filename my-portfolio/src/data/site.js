@@ -42,6 +42,17 @@ const site = {
     hint: "(hover over each experience for more detail)",
     items: [
       {
+        id: "eccc",
+        title: "Environment and Climate Change Canada",
+        markColor: "#FF0000",
+        period: "Incoming September 2026",
+        detailTitle: "Role: Software Developer",
+        description: "Incoming 12-month software developer internship.",
+        credit: "Burlington, ON",
+        image: null,
+        href: null,
+      },
+      {
         id: "iec",
         title: "IEC Mortgage & Finance",
         markColor: "#1a3a5c",
