@@ -42,6 +42,18 @@ const site = {
     hint: "(hover over each experience for more detail)",
     items: [
       {
+        id: "iec",
+        title: "IEC Mortgage & Finance",
+        markColor: "#1a3a5c",
+        period: "May 2026–June 2026",
+        detailTitle: "Role: Web Developer",
+        description:
+          "Designed and developed a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
+        credit: "Toronto, ON",
+        image: null,
+        href: null,
+      },
+      {
         id: "tpay-mobile",
         title: "TPay Mobile",
         markColor: "#0d9488",
@@ -61,18 +73,6 @@ const site = {
         detailTitle: "Role: Software Developer",
         description: "Incoming 12-month software developer internship.",
         credit: "Burlington, ON",
-        image: null,
-        href: null,
-      },
-      {
-        id: "iec",
-        title: "IEC Mortgage & Finance",
-        markColor: "#1a3a5c",
-        period: "May 2026–June 2026",
-        detailTitle: "Role: Web Developer",
-        description:
-          "Designed and developed a modern mortgage brokerage website focused on UX, lead generation, SEO, and easy internal content management.",
-        credit: "Toronto, ON",
         image: null,
         href: null,
       },
