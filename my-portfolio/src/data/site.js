@@ -132,7 +132,7 @@ const site = {
       year: "2025",
     },
   ],
-  footer: "last updated august 2026",
+  footer: "last updated november 2026",
 };
 
 export default site;
